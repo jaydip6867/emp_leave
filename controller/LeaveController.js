@@ -14,3 +14,24 @@ exports.getleave = async (req,res)=>{
         data
     })
 }
+
+exports.getreport = async (req,res)=>{
+    var id = req.params.id;
+    var month = parseInt(req.query.month);
+    var year = parseInt(req.query.year);
+
+    if(year)
+    {
+        var data = await LeaveModel.findOne({ "EmpId": id, "year": year });
+    }
+    else if(month)
+    {
+        var data = await LeaveModel.findOne({ "EmpId": id, "month": month });
+    }
+    res.status(200).json({
+        stauts:'get leave data of '+id,
+        data,
+        month,
+        year
+    })
+}

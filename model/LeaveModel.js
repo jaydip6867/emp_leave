@@ -21,6 +21,12 @@ var LeaveSchema = new mongoose.Schema({
     },
     endDate:{
         type:String,
+    },
+    month:{
+        type:Number,
+    },
+    year:{
+        type:Number
     }
 })
 

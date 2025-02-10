@@ -11,6 +11,7 @@ router.post('/editemployee/:id',employee.editemployee);
 router.get('/deleteemployee/:id',employee.deleteemployee);
 
 router.get('/getleave',leave.getleave);
-router.post('/addleave',leave.addleave);    
+router.post('/addleave',leave.addleave);
+router.get('/getreport/:id',leave.getreport);
 
 module.exports = router;
